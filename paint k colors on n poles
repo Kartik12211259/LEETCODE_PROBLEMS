@@ -1,0 +1,28 @@
+//n poles and k colors
+#include<iostream>
+using namespace std;
+
+ paintonpoles(int n,int k)
+ {
+ 	if(n==1)
+ 	{
+ 		return k;
+	 }
+	 
+	 if(n==2)
+	 {
+	 	return k+k*(k-1);
+	 }
+	 
+	 
+	 int ans=(k-1)*( paintonpoles(n-2,k)+ paintonpoles(n-1,k));
+	 return ans;
+ 	
+ }
+main()
+{
+   int n=3;
+   int k=3;	
+   
+   cout<<paintonpoles(n,k);
+}
