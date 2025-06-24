@@ -1,0 +1,30 @@
+
+#include<vector>
+#include<iostream>
+using namespace std;
+
+int arr(vector<int> v, int n)
+{
+	if(n==1)
+	{
+		return 0;
+	}
+	
+	if(n==2)
+	{
+		return 1;
+	}
+	
+	int ans= (n-1)*(arr(v,n-2)+arr(v,n-1));
+	return ans;
+}
+
+main()
+{
+	
+	vector<int>v ={1,3,5,7};
+	
+	int n=v.size();
+	cout<<arr(v,n);
+	
+}
